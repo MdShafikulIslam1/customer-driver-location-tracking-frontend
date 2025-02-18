@@ -72,7 +72,7 @@ export default function SignIn() {
     <div className="flex items-center justify-center min-h-screen bg-gray-900">
       <div className="w-full max-w-md p-8 bg-gray-800 rounded-2xl shadow-lg">
         <h2 className="text-2xl font-bold text-center text-white mb-6">
-          Sign In
+        Customer  Sign In
         </h2>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           <div>
