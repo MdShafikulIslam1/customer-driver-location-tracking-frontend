@@ -42,6 +42,7 @@ export const authOption: NextAuthOptions = {
   callbacks: {
     async jwt({ token, user, trigger, session }) {
       if (user) {
+        token.id = user.id;
         token._id = user._id;
         token.name = user.name;
         token.role = user.role;
@@ -56,6 +57,7 @@ export const authOption: NextAuthOptions = {
     },
     async session({ session, token }) {
       if (token) {
+        session.user.id = token.id as string;
         session.user._id = token._id as string;
         session.user.name = token.name as string;
         session.user.role = token.role as string;
@@ -73,8 +75,5 @@ export const authOption: NextAuthOptions = {
     signIn: "/sign-in",
     error: "/sign-in",
   },
-  // session: {
-  //   strategy: 'jwt',
-  // },
   secret: process.env.NEXTAUTH_SECRET,
 };

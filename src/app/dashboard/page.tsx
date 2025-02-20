@@ -167,7 +167,7 @@ const DashboardPage = () => {
     <div className="container mx-auto py-8">
       <div className="grid grid-cols-4 gap-6">
         {/* User Info Section */}
-        <div className="col-span-1 bg-white p-6 rounded-lg shadow-lg">
+        <div className="col-span-4 md:col-span-1 bg-white p-6 rounded-lg shadow-lg">
           <div className="space-y-4">
             <p className="text-xl font-semibold text-gray-800">
               Name: {userData?.name}
@@ -229,7 +229,7 @@ const DashboardPage = () => {
         </div>
 
         {/* Map Component Section */}
-        <div className="col-span-3">
+        <div className="col-span-4 md:col-span-3">
           {driverLocation && customerLocation ? (
             <Map
               driverLocation={driverLocation}
